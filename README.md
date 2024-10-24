@@ -12,10 +12,10 @@ Se trata de un sitio web ficticio de un negocio, que cuenta con una tienda virtu
 
 ## Deployment
 
-[Ir al sitio web Joyeria Glam] (https://rominacarranzadev.github.io/JoyeriaGlam/)
+[Ir al sitio web Joyeria Glam](https://rominacarranzadev.github.io/JoyeriaGlam/)
 
 ### Logo
-![Logo](https://github.com/RominaCarranzaDev/JoyeriaGlam/images/logo.png)
+![Logo](images/logo.png)
 
 
 
