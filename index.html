@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glam Joyeria - Joyas y accesorios artesanales</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="main">
+    <header class="container-menu">
+        <nav class="navbar navbar-expand-md ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="/images/logo.png" alt="Logo Joyería Glam" width="50" height="50">
+              </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end menu" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Joyería Glam</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active underline" aria-current="page" href="#">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link underline" href="./index.html#nosotros">NOSOTROS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link underline" href="./pages/tienda.html">TIENDA</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link underline" href="./index.html#contacto">CONTACTO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./pages/carrito.html"><i class='bx bx-shopping-bag'></i></a>
+                  </li>
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="portada grid">
+            <h1 class="title title_main">Joyería <br>Glam</h1>
+            <p>JOYAS Y ACCESORIOS HECHOS ARTESANALMENTE <br> Deja que tu personalidad brille con piezas creadas solo para ti.</p>
+            <a href="./pages/tienda.html" class="btn btn_main">comprá ahora</a>
+        </section>
+        <section id="nosotros" class="history grid">
+            <h2 class="title">Nuestra historia</h2>
+            <p class="grid_p1">Somos un pequeño grupo de apasionados fabricantes de joyería, a quienes nos gusta crear preciosa joyería delicada y personalizada.</p>
+            <p class="grid_p2">Nuestras piezas son únicas en su clase. Puedes estar seguro de que no hay dos piezas iguales.</p>
+            <p class="grid_p3">La felicidad en los ojos de nuestros clientes cuando ven las creaciones realizadas solo para ellos <span>nos impulsa</span></p>
+            <div class="container-imgs gallery">
+                <div><img src="./images/photo-1.jpg" alt="Imagen muestra collares"></div>
+                <div><img src="./images/photo-2.jpg" alt="Imagen muestra anillos"></div>
+                <div><img src="./images/photo-3.png" alt="Imagen muestra pulseras"></div>
+                
+            </div>
+        </section>
+        <section class="products">
+            <h2 class="title">Nuestros productos</h2>
+            <div class="container-products grid">
+                <div class="card-product flex">
+                    <div class="container-img">
+                        <a href="#"><img src="./images/products/photo-01.png" alt="Anillo midi corazón regulable"></a>
+                    </div>
+                    <h3 class="card-product_title">Anillo heart midi</h3>
+                </div>      
+                <div class="card-product flex">
+                    <div class="container-img">
+                       <a href="#"><img src="./images/products/photo-02.png" alt="Pulsera MOM con perlas"></a> 
+                    </div>
+                    <h3 class="card-product_title">Pulsera Mom con perlas</h3>
+                </div>
+                <div class="card-product flex">
+                    <div class="container-img">
+                        <a href="#"><img src="./images/products/photo-03.png" alt="Aros moon"></a>
+                    </div>
+                    <h3 class="card-product_title">Aros Moon & Stars</h3>
+                </div>
+                <div class="card-product flex">
+                    <div class="container-img">
+                        <a href="#"><img src="./images/products/photo-04.png" alt="Pulsera San Benito"></a>
+                    </div>
+                    <h3 class="card-product_title">Pulsera San Benito</h3>
+                </div>
+                <div class="card-product flex">
+                    <div class="container-img">
+                        <a href="#"><img src="./images/products/photo-05.png" alt="Pulser love combinada"></a>
+                    </div>
+                    <h3 class="card-product_title">Pulsera LOVE combinada</h3>
+                </div>
+                <div class="card-product flex container-img">
+                    
+                        <img src="./images/photo-bg.png" alt="Imagen joya">
+                    
+                    <a href="./pages/tienda.html" class="btn_circle">ver todo</a>
+                </div>
+            </div>
+        </section>
+        <section class="info grid">
+            <h2 class="title">Garantizamos</h2>
+            <div class="container-item flex">
+                <i class='bx bxs-truck'></i>
+                <h3 class="card-product_title">Envio gratis</h3>
+                <p>No hay pedido mínimo</p>
+            </div>
+            <div class="container-item flex" >
+                <i class='bx bx-sync'></i>
+                <h3 class="card-product_title">Devolucion</h3>
+                <p>Con garantia de devolución</p>
+            </div>
+            <div class="container-item flex">
+                <i class='bx bx-wallet-alt'></i>
+                <h3 class="card-product_title">Pago seguro</h3>
+                <p>Transacciones seguras</p>
+            </div>
+        </section>
+        <section class="new">
+            <h2 class="title">New in</h2>
+            <div class="container-products grid">
+                <a href="#" class="card-product">
+                    <div class="container-img">
+                        <img src="./images/products/photo-06.png" alt="Collar doble perla corazón">
+                    </div>
+                    <h3 class="card-product_title">Collar doble corazón-perla</h3>
+                    <p class="card-product_description">Doble cadena, perlas de acero inoxidale y doradas, colgantes corazón.</p>
+                </a>
+                <a href="#" class="card-product">
+                    <div class="container-img">
+                        <img src="./images/products/photo-07.png" alt="Collar corazón perlado">
+                    </div>
+                    <h3 class="card-product_title">Collar Corazón perlado</h3>
+                    <p class="card-product_description">Colgante de corazón perlado con cadena broche marinero.</p>
+                </a>
+                <a href="#" class="card-product">
+                    <div class="container-img">
+                        <img src="./images/products/photo-08.png" alt="Pulsera estrella">
+                    </div>
+                    <h3 class="card-product_title">Pulsera Star</h3>
+                    <p class="card-product_description">Perlas, cuarzo cristal y colgante estella.</p>
+                </a>
+                <a href="#" class="card-product">
+                    <div class="container-img">
+                        <img src="./images/products/photo-09.png" alt="Pulsera Sol">
+                    </div>
+                    <h3 class="card-product_title">Pulsera Sun</h3>
+                    <p class="card-product_description">Pulsera de cristales y colgante Sol con strass.</p>
+                </a>
+                <a href="#" class="card-product">
+                    <div class="container-img">
+                        <img src="./images/products/photo-10.png" alt="Aros Saturno">
+                    </div>
+                    <h3 class="card-product_title">Aros Saturno</h3>
+                    <p class="card-product_description">Doble cadena, colgante Saturno, perla y punta dorada.</p>
+                </a>
+                <a href="#" class="card-product">
+                    <div class="container-img">
+                        <img src="./images/products/photo-11.png" alt="Aros Mariposa">
+                    </div>
+                    <h3 class="card-product_title">Aros Butterfly</h3>
+                    <p class="card-product_description">Aro Solitario Colgante cadena y mariposas.</p>
+                </a>
+            </div>
+        </section>
+        <section class="contacto">
+            <h2 class="title text-center">Follow us</h2>
+            <div class="link-social flex">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class='bx bxl-facebook'></i></a>
+                <a href="https://x.com/" target="_blank" rel="noopener"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener"><i class='bx bxl-tiktok'></i></a>
+            </div>
+            <div id="contacto" class="link-contact">
+                <h2 class="title">Contactanos</h2>
+                <ul class="flex">
+                    <li><a href="https://maps.app.goo.gl/YWnR3U1baMtuGVqr8"><i class='bx bx-map-pin'></i><address>Calle Falsa 123</address></a></li>
+                    <li><a href="tel:+5401140303456"><i class='bx bx-phone'></i>0114 0303 456</a></li>
+                    <li><a href="https://web.whatsapp.com/" target="_blank" rel="noopener"><i class='bx bxl-whatsapp' ></i>15 5122 3344</a></li>
+                    <li><a href="mailto:joyeria-glam@email.com"><i class='bx bx-envelope' ></i>joyeria-glam@email.com</a></li>
+                </ul>
+                <form id="form-contacto" action="https://formspree.io/f/xeoqqked" method="POST">
+                    <div class="input-group flex">
+                        <label for="name">Tu Nombre</label>
+                        <input type="text" id="name" name="name" minlength="1" required>
+                    </div>
+                    <div class="input-group flex">
+                        <label for="email">Tu Correo Electrónico</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="input-group flex">
+                        <label for="motivo">¿En qué podemos ayudarte?</label>
+                        <select name="motivo" id="motivo">
+                            <option value="compra">Quiero realizar una compra</option>
+                            <option value="reclamo">Quiero hacer un reclamo sobre mi pedido</option>
+                            <option value="consejo">Quiero recomendarles</option>
+                            <option value="empleo">Quiero ser parte de Glam</option>
+                            <option value="devolución">Tengo que pedir una devolución</option>
+                            <option value="otro">Otro motivo</option>
+                        </select>
+                    </div>
+                    <textarea name="message" id="message" placeholder="¿Quieres decirnos algo más?"></textarea>
+                    <input type="submit" value="ENVIAR" class="btn btn_form">
+                </form>
+            </div>
+        </section>
+        <section class="testimonial grid">
+            <div class="card-testimonial grid">
+                <div class="container_stars">
+                    <i class='bx bxs-star bx-sm'></i>
+                    <i class='bx bxs-star bx-sm'></i>
+                    <i class='bx bxs-star bx-sm'></i>
+                    <i class='bx bxs-star-half bx-sm' ></i>
+                    <i class='bx bx-star bx-sm'></i>
+                </div>
+                <h5 class="title title_opinion">Collar con colgante estrella y gema</h5>
+                <div class="opinion flex">
+                    <i class='bx bxs-quote-alt-left  bx-md'></i>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates, commodi.</p>
+                    <i class='bx bxs-quote-alt-right  bx-md'></i>
+                </div>
+                <div class="container-img">
+                    <img src="./images/bg_female.png" alt="Imagen de silueta femenina">
+                </div>
+                <div class="name-testimonial"><p>Ana Lopez</p></div>
+            </div>
+            <div class="card-testimonial grid">
+                <div class="container_stars">
+                    <i class='bx bxs-star bx-sm'></i>
+                    <i class='bx bxs-star bx-sm'></i>
+                    <i class='bx bxs-star bx-sm'></i>
+                    <i class='bx bxs-star bx-sm' ></i>
+                    <i class='bx bxs-star bx-sm'></i>
+                </div>
+                <h5 class="title title_opinion">Anillo infinito</h5>
+                <div class="opinion flex">
+                    <i class='bx bxs-quote-alt-left  bx-md'></i>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptas eius vero molestiae doloribus beatae?</p>
+                    <i class='bx bxs-quote-alt-right  bx-md'></i>
+                </div> 
+                <div class="container-img">
+                    <img src="./images/bg_female.png" alt="Imagen de silueta femenina">
+                </div>
+                <div class="name-testimonial"><p>Camila Mendez</p></div>
+            </div>
+            <div class="card-testimonial grid">
+                <div class="container_stars">
+                    <i class='bx bxs-star bx-sm'></i>
+                    <i class='bx bxs-star bx-sm'></i>
+                    <i class='bx bxs-star bx-sm'></i>
+                    <i class='bx bxs-star bx-sm' ></i>
+                    <i class='bx bxs-star-half bx-sm'></i>
+                </div>
+                <h5 class="title title_opinion">Esclava dorada</h5>
+                <div class="opinion flex">
+                    <i class='bx bxs-quote-alt-left  bx-md'></i>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates, commodi.</p>
+                    <i class='bx bxs-quote-alt-right  bx-md'></i>
+                </div>
+                <div class="container-img">
+                    <img src="./images/bg_male.png" alt="Imagen de silueta masculina">
+                </div>
+                <div class="name-testimonial"><p>Pedro Britos</p></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <div class="container-logo">
+                <img src="./images/logo.png" alt="Logo de Glam Joyeria" class="logo">
+            </div>
+            <address><i class='bx bx-map-pin'></i>Calle Falsa 123 <br> Buenos Aires, Argentina.</address>
+        </div>
+        <div>
+            <h4>CONTACTO</h4>
+            <ul>
+                <li><a href="tel:+5401140303456"><i class='bx bx-phone'></i>0114 0303 456</a></li>
+                <li><a href="https://web.whatsapp.com/"><i class='bx bxl-whatsapp' ></i>15 5122 3344</a></li>
+                <li><a href="mailto:joyeria-glam@email.com"><i class='bx bx-envelope' ></i>joyeria-glam@email.com</a></li>
+            </ul>
+        </div>
+        <div>
+        <h4>SECCIONES</h4>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#nosotros">NOSOTROS</a></li>
+                <li><a href="./pages/tienda.html">TIENDA</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
