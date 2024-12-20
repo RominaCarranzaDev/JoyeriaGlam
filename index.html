@@ -41,8 +41,8 @@
                   <li class="nav-item">
                     <a class="nav-link underline" href="./index.html#contacto">CONTACTO</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./pages/carrito.html"><i class='bx bx-shopping-bag'></i></a>
+                  <li class="nav-item carrito-item">
+                    <a class="nav-link" href="./pages/carrito.html"><i class='bx bx-shopping-bag'></i></a><span class="totalItems"></span>
                   </li>
               </ul>
               
@@ -74,31 +74,31 @@
             <div class="container-products grid">
                 <div class="card-product flex">
                     <div class="container-img">
-                        <a href="?modal&id=json1"><img src="./images/products/photo-01.png" alt="Anillo midi corazón regulable"></a>
+                        <a href="./pages/tienda.html#img_json1"><img src="./images/products/photo-01.png" alt="Anillo midi corazón regulable"></a>
                     </div>
                     <h3 class="card-product_title">Anillo heart midi</h3>
                 </div>      
                 <div class="card-product flex">
                     <div class="container-img">
-                       <a href="?modal&id=json2"><img src="./images/products/photo-02.png" alt="Pulsera MOM con perlas"></a> 
+                       <a href="./pages/tienda.html#img_json2"><img src="./images/products/photo-02.png" alt="Pulsera MOM con perlas"></a> 
                     </div>
                     <h3 class="card-product_title">Pulsera Mom con perlas</h3>
                 </div>
                 <div class="card-product flex">
                     <div class="container-img">
-                        <a href="?modal&id=json3"><img src="./images/products/photo-03.png" alt="Aros moon"></a>
+                        <a href="./pages/tienda.html#img_json3"><img src="./images/products/photo-03.png" alt="Aros moon"></a>
                     </div>
                     <h3 class="card-product_title">Aros Moon & Stars</h3>
                 </div>
                 <div class="card-product flex">
                     <div class="container-img">
-                        <a href="?modal&id=json4"><img src="./images/products/photo-04.png" alt="Pulsera San Benito"></a>
+                        <a href="./pages/tienda.html#img_json4"><img src="./images/products/photo-04.png" alt="Pulsera San Benito"></a>
                     </div>
                     <h3 class="card-product_title">Pulsera San Benito</h3>
                 </div>
                 <div class="card-product flex">
                     <div class="container-img">
-                        <a href="?modal&id=json5"><img src="./images/products/photo-05.png" alt="Pulser love combinada"></a>
+                        <a href="./pages/tienda.html#img_json5"><img src="./images/products/photo-05.png" alt="Pulser love combinada"></a>
                     </div>
                     <h3 class="card-product_title">Pulsera LOVE combinada</h3>
                 </div>
@@ -131,42 +131,42 @@
         <section class="new">
             <h2 class="title">New in</h2>
             <div class="container-products grid">
-                <a href="?modal&id=json6" class="card-product">
+                <a href="./pages/tienda.html#img_json6" class="card-product">
                     <div class="container-img">
                         <img src="./images/products/photo-06.png" alt="Collar doble perla corazón">
                     </div>
                     <h3 class="card-product_title">Collar doble corazón-perla</h3>
                     <p class="card-product_description">Doble cadena, perlas de acero inoxidale y doradas, colgantes corazón.</p>
                 </a>
-                <a href="?modal&id=json7" class="card-product">
+                <a href="./pages/tienda.html#img_json7" class="card-product">
                     <div class="container-img">
                         <img src="./images/products/photo-07.png" alt="Collar corazón perlado">
                     </div>
                     <h3 class="card-product_title">Collar Corazón perlado</h3>
                     <p class="card-product_description">Colgante de corazón perlado con cadena broche marinero.</p>
                 </a>
-                <a href="?modal&id=json8" class="card-product">
+                <a href="./pages/tienda.html#img_json8" class="card-product">
                     <div class="container-img">
                         <img src="./images/products/photo-08.png" alt="Pulsera estrella">
                     </div>
                     <h3 class="card-product_title">Pulsera Star</h3>
                     <p class="card-product_description">Perlas, cuarzo cristal y colgante estella.</p>
                 </a>
-                <a href="?modal&id=json9" class="card-product">
+                <a href="./pages/tienda.html#img_json9" class="card-product">
                     <div class="container-img">
                         <img src="./images/products/photo-09.png" alt="Pulsera Sol">
                     </div>
                     <h3 class="card-product_title">Pulsera Sun</h3>
                     <p class="card-product_description">Pulsera de cristales y colgante Sol con strass.</p>
                 </a>
-                <a href="?modal&id=json10" class="card-product">
+                <a href="./pages/tienda.html#img_json10" class="card-product">
                     <div class="container-img">
                         <img src="./images/products/photo-10.png" alt="Aros Saturno">
                     </div>
                     <h3 class="card-product_title">Aros Saturno</h3>
                     <p class="card-product_description">Doble cadena, colgante Saturno, perla y punta dorada.</p>
                 </a>
-                <a href="?modal&id=json11" class="card-product">
+                <a href="./pages/tienda.html#img_json11" class="card-product">
                     <div class="container-img">
                         <img src="./images/products/photo-11.png" alt="Aros Mariposa">
                     </div>
@@ -275,19 +275,6 @@
                 <div class="name-testimonial"><p>Pedro Britos</p></div>
             </div>
         </section>
-        <div id="productModal" class="modal" style="display: none;">
-            <div class="modal-content">
-              <span class="close-modal">&times;</span>
-              <div class="modal-body">
-                <img id="modal-image" src="" alt="Producto">
-                <h2 id="modal-title"></h2>
-                <p id="modal-description"></p>
-                <p><strong>Precio:</strong> $<span id="modal-price"></span></p>
-                <button class="btn btn-primary" id="addToCart">Agregar al carrito</button>
-              </div>
-            </div>
-          </div>
-          
     </main>
     <footer>
         <div>

@@ -2,15 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const carritoLS= JSON.parse(localStorage.getItem('cart')) || [];
     const carritoTable = document.getElementById('tableCart');
     const total = document.getElementById('total');
-    
-
+    //console.log(carritoLS)
  
     // Cargar productos en la tabla del carrito
     async function cargarCarrito(carritoLS, carritoTable) {
         let total = 0;
       
         for (const item of carritoLS) {
-          const producto = await getProductoId(item.id); // Obtener producto
+          //console.log(item.id)
+          const producto = await getProductoId(item.id); 
           const fila = document.createElement('tr');
       
           // Imagen del producto
@@ -67,53 +67,24 @@ document.addEventListener("DOMContentLoaded", () => {
       
         // Actualizar el total en el DOM
         actualizarTotal(total);
+    }
+      
+    // Función para eliminar producto del carrito
+    function eliminarProductoDelCarrito(idProducto) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart = cart.filter(producto => producto.id !== idProducto);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Producto eliminado del carrito!");
+      location.reload();
+    }
+      
+    // Función para actualizar el total
+    function actualizarTotal(total) {
+      const totalGral = document.querySelector("#total");
+      if (totalGral) {
+        totalGral.textContent =`$${total.toFixed(2)}`;
       }
-      
-      async function getProductoId(idProducto) {
-        try {
-          if (idProducto.startsWith("json")) {
-            const responseJ = await fetch('../json/products.json');
-            const productosJson = await responseJ.json();
-      
-            // Buscar el producto en el archivo JSON
-            const producto = productosJson.find(prod => prod.id === idProducto);
-            if (producto) {
-              return producto;
-            }
-          }
-      
-          const response = await fetch(`https://dummyjson.com/products/${idProducto}`);
-          const producto = await response.json();
-          return producto;
-        } catch (error) {
-          console.error("Error al obtener el producto:", error);
-        }
-      }
-      
-      // Función para eliminar producto del carrito
-      function eliminarProductoDelCarrito(idProducto) {
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cart = cart.filter(producto => producto.id !== idProducto);
-        localStorage.setItem("cart", JSON.stringify(cart));
-        alert("Producto eliminado del carrito!");
-        location.reload();
-      }
-      
-      // Función para actualizar el total en el DOM
-      function actualizarTotal(total) {
-        const totalGral = document.querySelector("#total");
-        if (totalGral) {
-          totalGral.textContent =`$${total.toFixed(2)}`;
-        }
-      }
-      
-
-    // // Botón para limpiar el carrito y volver al inicio
-    // document.getElementById('limpiar-carrito').addEventListener('click', () => 
-    // {
-    //     localStorage.removeItem('cart'); 
-    //     window.location.href = 'index.html'; 
-    // });
+    }
 
     // Botón para finalizar la compra con sweet Alert
     document.getElementById('comprar').addEventListener('click', () => 
@@ -128,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Limpiar el carrito después de finalizar la compra
         localStorage.removeItem('cart'); 
         
-        // Redirigir al inicio despues de 4 segundos
+        // Redirigir al inicio 
         setTimeout(() => {
         window.location.href = '../index.html'; 
         }, 3000);     

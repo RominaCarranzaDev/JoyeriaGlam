@@ -17,8 +17,8 @@ async function fetchProductos() {
       const cardDiv = document.createElement("div");
       cardDiv.className = "card-product";
       cardDiv.innerHTML = `
-        <div class="container-img">
-          <a href="#"><img src="${product.images[0]}" alt="${product.title}"loading="lazy"></a>
+        <div id="img_${product.id}" class="container-img">
+          <img src="${product.images[0]}" alt="${product.title}"loading="lazy">
         </div>
         <div class="card-detalles grid">
           <h3 class="card-product_title">${product.title}</h3>
@@ -36,38 +36,30 @@ async function fetchProductos() {
       containerProducts.appendChild(cardDiv);
     });
 
-// Selecciona todas las botoneras
-const botoneras = document.querySelectorAll(".botonera");
+    // Selecciona todas las botoneras
+    const botoneras = document.querySelectorAll(".botonera");
+    botoneras.forEach((botonera) => {
+      const minusButton = botonera.querySelector(".bx-minus");
+      const plusButton = botonera.querySelector(".bx-plus");
+      const numberSpan = botonera.querySelector(".number");
 
-// Recorre cada botonera y agrega listeners
-botoneras.forEach((botonera) => {
-  const minusButton = botonera.querySelector(".bx-minus");
-  const plusButton = botonera.querySelector(".bx-plus");
-  const numberSpan = botonera.querySelector(".number");
+      // Agregar listener para restar
+      minusButton.addEventListener("click", () => {
+        let currentValue = parseInt(numberSpan.textContent, 10);
+        if (currentValue > 0) {
+          currentValue--;
+          numberSpan.textContent = currentValue;
+        }
+      });
 
-  // Agregar listener para restar
-  minusButton.addEventListener("click", () => {
-    let currentValue = parseInt(numberSpan.textContent, 10);
-    if (currentValue > 0) {
-      currentValue--;
-      numberSpan.textContent = currentValue;
-    }
-    
-  });
-
-  // Agregar listener para sumar
-  plusButton.addEventListener("click", () => {
-    let currentValue = parseInt(numberSpan.textContent, 10);
-    currentValue++;
-    numberSpan.textContent = currentValue;
-   
-  });
-
- 
-});
-
-
-
+      // Agregar listener para sumar
+      plusButton.addEventListener("click", () => {
+        let currentValue = parseInt(numberSpan.textContent, 10);
+        currentValue++;
+        numberSpan.textContent = currentValue;
+      
+      });
+    });
 
     // Evento al botón "Agregar"
     const botones = document.querySelectorAll(".btn-add");
@@ -88,6 +80,19 @@ botoneras.forEach((botonera) => {
       });
     });
 
+
+    // Evento a las card
+    const cardsImg = document.querySelectorAll(".card-product img");
+    cardsImg.forEach((cardImg) => {
+      cardImg.addEventListener("click", async () => {
+        const card = cardImg.closest(".card-product");
+        const productId = card.querySelector(".btn-add").dataset.prod;
+        //console.log("ID del producto:", productId);
+        const producto = await getProductoId(productId);
+        createModal(producto)
+      })
+    })
+
       } catch (error) {
         console.error("Error al obtener los productos:", error);
       }
@@ -98,43 +103,92 @@ botoneras.forEach((botonera) => {
  async function agregarAlCarrito(producto) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const productoExistente = cart.find(prod => prod.id === producto.id);
-      // Si el producto ya existe, actualizar la cantidad
+      // Si el producto ya existe, actualiza la cantidad
   if (productoExistente) {
-    productoExistente.quantity = producto.quantity;
+    productoExistente.quantity += producto.quantity;
   } else {
     cart.push(producto);
   }
     localStorage.setItem("cart", JSON.stringify(cart));
     alert(`${producto.name} ha sido agregado al carrito!`);
+}
+
+
+
+function createModal(product) {
+  // Crear contenedor del modal
+  const modal = document.createElement("div");
+  modal.id = "productModal";
+  const modalContent = document.createElement("div");
+  modalContent.classList.add('modal-content');
+  const closeModal = document.createElement("span");
+  closeModal.textContent = "X";
+  closeModal.classList.add('close-modal');
+
+  closeModal.addEventListener("click", () => {
+    modal.remove();
+  });
+
+  // Imagen del producto
+  const img = document.createElement("img");
+  img.src = product.images[0];
+  img.alt = product.title;
   
-}
+  // Título del producto
+  const title = document.createElement("h2");
+  title.textContent = product.title;
 
+  // Descripción del producto
+  const description = document.createElement("p");
+  description.textContent = product.description;
 
-function actualizarTotal (){ 
-  let numberTotal = document.querySelector('span.totalItems');
-  let totalItems = obtenerCantidadCarrito();
-  if (!totalItems) {
-    numberTotal.style.display = "none"; 
-  } else {
-    numberTotal.style.display = "flex";
-    numberTotal.textContent = totalItems;
-  }
-}
+  // Precio del producto
+  const price = document.createElement("p");
+  price.innerHTML = `<strong>Precio:</strong> $${product.price.toFixed(2)}`;
 
-function obtenerCantidadCarrito() {
-  // Obtener el carrito del localStorage (puede ser un array de objetos)
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  // Botón para agregar al carrito
+  const addToCartButton = document.createElement("button");
+  addToCartButton.innerHTML  = `<i class='bx bx-cart-add'></i>COMPRAR`;
+  addToCartButton.classList.add('btn-add', 'btn', 'btn_form');
+  addToCartButton.setAttribute('data-prod', product.id)
 
-  // Sumar todas las cantidades de los productos en el carrito
-  let totalItems = cart.reduce((total, producto) => total + producto.quantity, 0);
-  if (totalItems == 0) {
-    totalItems = null;
-  }
-  return totalItems;
+  addToCartButton.addEventListener("click", () => {
+    let productoCart = {
+      'id': `${product.id}`,
+      'quantity': 1,
+      'name': product.title
+    };
+       agregarAlCarrito(productoCart);
+       actualizarTotal();
+    modal.remove();
+  });
+
+  // Agregar elementos al modal
+  modalContent.appendChild(closeModal);
+  modalContent.appendChild(img);
+  modalContent.appendChild(title);
+  modalContent.appendChild(description);
+  modalContent.appendChild(price);
+  modalContent.appendChild(addToCartButton);
+  modal.appendChild(modalContent);
+
+  document.body.appendChild(modal);
 }
 
 
 actualizarTotal();
 // Carga inicial de productos
 fetchProductos();
+
+ // Obtener el fragmento de la URL
+ const redireccion = window.location.hash;
+ if (redireccion) {
+   const espera = setInterval(() => {
+     const card = document.querySelector(redireccion);
+     if (card) {
+       card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+       clearInterval(espera);
+     }
+   }, 100);
+ }
 });
